@@ -1,0 +1,40 @@
+{
+    "name": "tinymeng/tencentyun-im",
+    "description": "腾讯云即时通信 SDK for PHP",
+    "keywords": [
+        "php",
+        "IM",
+        "即时通信",
+        "腾讯云"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "tinymeng",
+            "email": "666@majiemng.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+        "tencent/tls-sig-api-v2": "^1.1",
+        "guzzlehttp/guzzle": "^6.4|^7.0",
+        "ext-json": "*",
+        "ext-simplexml": "*"
+    }
+    ,
+    "require-dev": {
+        "roave/security-advisories": "dev-latest"
+    },
+    "autoload": {
+        "psr-4": {
+            "Tinymeng\\Im\\": "./src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Tinymeng\\Im\\ServiceProvider"
+            ]
+        }
+    }
+}

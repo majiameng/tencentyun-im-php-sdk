@@ -1,20 +1,20 @@
 <?php
 
 /*
- * This file is part of the Tinymeng/tencentyun-im.
+ * This file is part of the tinymeng/tencentyun-im.
  *
- * (c) Tinymeng<laravel_code@163.com>
+ * (c) tinymeng<laravel_code@163.com>
  *
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
  */
 
-namespace Tinymeng\Im;
+namespace tinymeng\TenIm;
 
 use Exception;
-use Tinymeng\Im\Exceptions\HttpException;
-use Tinymeng\Im\Exceptions\ImException;
-use Tinymeng\Im\Traits\HasHttpRequest;
+use tinymeng\TenIm\Exceptions\HttpException;
+use tinymeng\TenIm\Exceptions\ImException;
+use tinymeng\TenIm\Traits\HasHttpRequest;
 use Tencent\TLSSigAPIv2;
 
 class IM

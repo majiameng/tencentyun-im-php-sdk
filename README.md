@@ -3,17 +3,17 @@
 <p align="center">腾讯云 IM.</p>
 
 ![StyleCI build status](https://github.styleci.io/repos/220258775/shield) 
-[![Latest Stable Version](https://poser.pugx.org/Tinymeng/tencentyun-im/v)](//packagist.org/packages/Tinymeng/tencentyun-im) 
-[![Total Downloads](https://poser.pugx.org/Tinymeng/tencentyun-im/downloads)](//packagist.org/packages/Tinymeng/tencentyun-im) 
-[![Latest Unstable Version](https://poser.pugx.org/Tinymeng/tencentyun-im/v/unstable)](//packagist.org/packages/Tinymeng/tencentyun-im) 
-[![License](https://poser.pugx.org/Tinymeng/tencentyun-im/license)](//packagist.org/packages/Tinymeng/tencentyun-im)
+[![Latest Stable Version](https://poser.pugx.org/tinymeng/tencentyun-im/v)](//packagist.org/packages/tinymeng/tencentyun-im) 
+[![Total Downloads](https://poser.pugx.org/tinymeng/tencentyun-im/downloads)](//packagist.org/packages/tinymeng/tencentyun-im) 
+[![Latest Unstable Version](https://poser.pugx.org/tinymeng/tencentyun-im/v/unstable)](//packagist.org/packages/tinymeng/tencentyun-im) 
+[![License](https://poser.pugx.org/tinymeng/tencentyun-im/license)](//packagist.org/packages/tinymeng/tencentyun-im)
 
 ## 安装
 
 ```shell
-$ composer require Tinymeng/tencentyun-im -vvv
+$ composer require tinymeng/tencentyun-im -vvv
 ```
-> [Hyperf 扩展包](https://github.com/Tinymeng/hyperf-im)
+> [Hyperf 扩展包](https://github.com/tinymeng/hyperf-im)
 
 > 说明：本项目默认会引入 [tencent/tls-sig-api-v2](https://github.com/tencentyun/tls-sig-api-v2-php) 扩展包，所以你不需要手动引入 `tencent/tls-sig-api-v2`,否则可能会造成依赖冲突
 
@@ -52,7 +52,7 @@ $ composer require Tinymeng/tencentyun-im -vvv
 
 require __DIR__ .'/vendor/autoload.php';
 
-use Tinymeng\Im\IM;
+use tinymeng\TenIm\IM;
 
 $config = [
     'sdk_app_id' => '',
@@ -61,8 +61,8 @@ $config = [
 ];
 $im = new IM($config);
 $params = [
-    'Identifier' => "Tinymeng",
-    'Nick'       => 'Tinymeng',
+    'Identifier' => "tinymeng",
+    'Nick'       => 'tinymeng',
     'FaceUrl'    => '',
 ];
 
@@ -74,7 +74,7 @@ print_r($im->send('im_open_login_svc','account_import',$params));
 ```php
 <?php
 $params = [
-    'To_Account' => ['Tinymeng']
+    'To_Account' => ['tinymeng']
 ];
 
 print_r($im->send('openim','querystate',$params));
@@ -94,9 +94,9 @@ print_r($im->send('openim','querystate',$params));
 ### 设置资料
 ```php
 $params = [
-    'From_Account' => 'Tinymeng',
+    'From_Account' => 'tinymeng',
         'ProfileItem' => [
-            ['Tag' => 'Tag_Profile_IM_Nick', 'Value' => 'Tinymeng'],
+            ['Tag' => 'Tag_Profile_IM_Nick', 'Value' => 'tinymeng'],
             ['Tag' => 'Tag_Profile_IM_Gender', 'Value' => 'Gender_Type_Male'],
             ['Tag' => 'Tag_Profile_IM_BirthDay', 'Value' => 19940410],
             ['Tag' => 'Tag_Profile_IM_SelfSignature', 'Value' => '程序人生的寂静欢喜'],
@@ -154,7 +154,7 @@ print_r($im->send('openim','sendmsg',$params));
 ## 在 Laravel 中使用
 #### 发布配置文件
 ```php
-php artisan vendor:publish --provider="Tinymeng\Im\ServiceProvider"
+php artisan vendor:publish --provider="tinymeng\TenIm\ServiceProvider"
 ```
 ##### 编写 .env 文件
 ```
@@ -166,7 +166,7 @@ SECRET_KEY=
 ### 方法参数注入
 
 ```php
-use Tinymeng\Im\IM;
+use tinymeng\TenIm\IM;
 public function index(IM $im)
 {
     $params = [
@@ -213,7 +213,7 @@ public function index()
 
 ### Facades 门面使用(可以提示)
 ```php
-use Tinymeng\Im\Facades\IM;
+use tinymeng\TenIm\Facades\IM;
 $params = [
         'SyncOtherMachine' => 1, // 消息不同步至发送方
         'From_Account' => '1',
@@ -241,8 +241,8 @@ TODO
 
 You can contribute in one of three ways:
 
-1. File bug reports using the [issue tracker](https://github.com/Tinymeng/IM/issues).
-2. Answer questions or fix bugs on the [issue tracker](https://github.com/Tinymeng/IM/issues).
+1. File bug reports using the [issue tracker](https://github.com/tinymeng/IM/issues).
+2. Answer questions or fix bugs on the [issue tracker](https://github.com/tinymeng/IM/issues).
 3. Contribute new features or update the wiki.
 
 _The code contribution process is not very formal. You just need to make sure that you follow the PSR-0, PSR-1, and PSR-2 coding guidelines. Any new code contributions must be accompanied by unit tests where applicable._

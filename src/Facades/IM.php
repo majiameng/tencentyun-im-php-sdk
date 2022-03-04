@@ -1,22 +1,22 @@
 <?php
 
 /*
- * This file is part of the Tinymeng/tencentyun-im.
+ * This file is part of the tinymeng/tencentyun-im.
  *
- * (c) Tinymeng<laravel_code@163.com>
+ * (c) tinymeng<laravel_code@163.com>
  *
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
  */
 
-namespace Tinymeng\Im\Facades;
+namespace tinymeng\TenIm\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /****
  * Class IM
  *
- * @package Tinymeng\Im\Facades
+ * @package tinymeng\TenIm\Facades
  */
 class IM extends Facade
 {
@@ -33,9 +33,9 @@ class IM extends Facade
     /**
      * Return the facade accessor.
      *
-     * @return \Tinymeng\Im\IM
+     * @return \tinymeng\TenIm\IM
      */
-    public static function im(): \Tinymeng\Im\IM
+    public static function im(): \tinymeng\TenIm\IM
     {
         return app('im');
     }

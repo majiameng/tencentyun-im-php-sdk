@@ -27,13 +27,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Tinymeng\\Im\\": "./src/"
+            "tinymeng\\TenIm\\": "./src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Tinymeng\\Im\\ServiceProvider"
+                "tinymeng\\TenIm\\ServiceProvider"
             ]
         }
     }
